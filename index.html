@@ -1,99 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0b1020">
-  <meta name="description" content="Md. Riad — CSE student and aspiring software/backend developer building practical projects with Python, FastAPI, SQL and modern web technologies.">
-  <title>Md. Riad | Developer Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b10">
+  <meta name="description" content="Md Riad — software developer portfolio, projects, skills and GitHub work.">
+  <title>Md Riad | Developer Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{--bg:#0b1020;--panel:rgba(19,27,49,.72);--text:#eef2ff;--muted:#a6b0ca;--line:rgba(168,190,255,.16);--aqua:#63e6d2;--blue:#7c9cff;--purple:#b89aff}
-    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.65;overflow-x:hidden}
-    body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse at 15% 10%,rgba(70,100,210,.2),transparent 38%),radial-gradient(ellipse at 85% 40%,rgba(80,220,198,.12),transparent 34%),linear-gradient(140deg,#0b1020,#10152a 55%,#0b1020)}
-    a{color:inherit;text-decoration:none}.container{width:min(1100px,calc(100% - 40px));margin:auto}.nav{position:sticky;top:0;z-index:10;background:rgba(11,16,32,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}.logo{font:700 1.1rem 'Space Grotesk',sans-serif;letter-spacing:-.04em}.logo span{color:var(--aqua)}.nav-links{display:flex;gap:26px;color:var(--muted);font-size:.92rem}.nav-links a:hover{color:var(--aqua)}.menu{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:8px 11px}
-    .hero{min-height:calc(100vh - 72px);display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:55px;padding:85px 0 100px}.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--aqua);font-size:.83rem;letter-spacing:.13em;text-transform:uppercase;font-weight:700}.dot{width:8px;height:8px;border-radius:50%;background:var(--aqua);box-shadow:0 0 15px var(--aqua);animation:pulse 1.8s infinite}.hero h1{font:700 clamp(3.2rem,7vw,5.8rem)/1.02 'Space Grotesk',sans-serif;letter-spacing:-.075em;margin:23px 0}.gradient{background:linear-gradient(100deg,var(--aqua),#8db6ff 52%,var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{max-width:620px;color:var(--muted);font-size:1.08rem}.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 18px;border-radius:12px;border:1px solid var(--line);font-weight:700;transition:transform .25s,box-shadow .25s,background .25s}.btn:hover{transform:translateY(-3px);box-shadow:0 12px 35px #0005}.btn.primary{color:#07131b;background:var(--aqua);border-color:transparent}.btn.secondary{background:rgba(255,255,255,.035)}.socials{display:flex;gap:18px;margin-top:28px;color:var(--muted);font-size:.92rem}.socials a:hover{color:var(--aqua)}
-    .visual{position:relative;min-height:390px;display:grid;place-items:center}.orb{position:absolute;width:300px;height:300px;border-radius:50%;background:linear-gradient(145deg,rgba(99,230,210,.2),rgba(124,156,255,.08));border:1px solid rgba(140,180,255,.25);box-shadow:0 0 100px rgba(99,230,210,.08),inset 0 0 70px rgba(124,156,255,.1);animation:float 7s ease-in-out infinite}.orb:before,.orb:after{content:"";position:absolute;border:1px solid rgba(99,230,210,.32);border-radius:50%;inset:-25px;transform:rotateX(65deg) rotateZ(-25deg)}.orb:after{inset:-50px;transform:rotateX(65deg) rotateZ(35deg);border-color:rgba(184,154,255,.25)}.code-card{position:relative;width:min(330px,100%);padding:23px;border:1px solid rgba(168,190,255,.24);border-radius:18px;background:rgba(10,16,33,.86);box-shadow:0 30px 80px #0007;transform:rotate(-3deg);animation:float 6s ease-in-out infinite reverse}.code-head{display:flex;gap:7px;margin-bottom:23px}.code-head i{width:9px;height:9px;border-radius:50%;background:#ff7185}.code-head i:nth-child(2){background:#ffd166}.code-head i:nth-child(3){background:var(--aqua)}.code-line{font:500 .87rem/2 'Space Grotesk',monospace;color:#b7c3e5;white-space:nowrap}.code-line .key{color:var(--purple)}.code-line .val{color:var(--aqua)}.code-line .comment{color:#73809e}
-    section{padding:78px 0}.section-head{margin-bottom:32px}.kicker{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--aqua);font-weight:700}.section-head h2{font:700 clamp(2rem,4vw,3rem)/1.15 'Space Grotesk',sans-serif;letter-spacing:-.05em;margin:9px 0}.section-head p{color:var(--muted);max-width:620px;margin:0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.card{padding:25px;border:1px solid var(--line);border-radius:18px;background:var(--panel);backdrop-filter:blur(10px);transition:transform .25s,border-color .25s,background .25s}.card:hover{transform:translateY(-5px);border-color:rgba(99,230,210,.5);background:rgba(23,34,60,.86)}.card-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.project-icon{width:43px;height:43px;display:grid;place-items:center;border-radius:13px;background:rgba(99,230,210,.1);color:var(--aqua);font-size:1.25rem}.card h3{font:600 1.25rem 'Space Grotesk',sans-serif;margin:18px 0 8px}.card p{color:var(--muted);font-size:.95rem;margin:0 0 18px}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:18px}.tag{font-size:.76rem;color:#d4def7;padding:5px 9px;border:1px solid var(--line);border-radius:7px;background:#ffffff06}.text-link{color:var(--aqua);font-weight:700;font-size:.9rem}.text-link:hover{text-decoration:underline}
-    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}.about-copy{color:var(--muted)}.skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.skill{padding:10px 13px;border-radius:10px;background:var(--panel);border:1px solid var(--line);font-size:.9rem}.focus-list{display:grid;gap:12px}.focus-item{display:flex;gap:14px;align-items:flex-start;padding:15px;border:1px solid var(--line);border-radius:13px;background:var(--panel)}.focus-item b{display:block}.focus-item span{font-size:.9rem;color:var(--muted)}.focus-icon{color:var(--aqua);font-size:1.2rem}
-    .contact-box{padding:38px;border-radius:22px;border:1px solid rgba(99,230,210,.25);background:linear-gradient(120deg,rgba(99,230,210,.09),rgba(124,156,255,.08));display:flex;justify-content:space-between;align-items:center;gap:24px}.contact-box h2{font:700 clamp(1.8rem,4vw,2.7rem)/1.1 'Space Grotesk',sans-serif;letter-spacing:-.05em;margin:0 0 10px}.contact-box p{color:var(--muted);margin:0;max-width:550px}.footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:.86rem}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
-    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}@keyframes float{0%,100%{translate:0 0}50%{translate:0 -13px}}@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(.8)}}
-    @media(max-width:760px){.nav-links{display:none;position:absolute;top:71px;left:0;right:0;padding:20px;background:#0b1020;border-bottom:1px solid var(--line);flex-direction:column;gap:15px}.nav-links.open{display:flex}.menu{display:block}.hero{grid-template-columns:1fr;padding:65px 0 55px;gap:10px}.hero h1{font-size:clamp(3.1rem,15vw,5rem)}.visual{min-height:340px}.orb{width:230px;height:230px}.grid,.about-grid{grid-template-columns:1fr}.contact-box{padding:27px;align-items:flex-start;flex-direction:column}section{padding:60px 0}.container{width:min(100% - 30px,1100px)}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <header class="nav"><div class="container nav-inner">
-    <a class="logo" href="#home">mdriad<span>.</span></a>
-    <nav class="nav-links" id="navLinks"><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
-    <button class="menu" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
-  </div></header>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="orb orb-one" aria-hidden="true"></div>
+  <div class="orb orb-two" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Md Riad home"><span class="brand-mark">R</span><span>mdriad<span class="accent">.dev</span></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
+    <nav class="nav" id="nav">
+      <a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+      <a class="nav-github" href="https://github.com/mdriad-dev" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+    </nav>
+  </header>
+
   <main>
-    <section class="container hero" id="home">
+    <section class="hero section-wrap" id="home">
       <div class="hero-copy reveal">
-        <div class="eyebrow"><span class="dot"></span> Open to learning & opportunities</div>
-        <h1>Hi, I'm<br><span class="gradient">Md. Riad.</span></h1>
-        <h2 style="font:600 clamp(1.15rem,2.5vw,1.6rem) 'Space Grotesk',sans-serif;margin:0">CSE Graduate-to-be · Aspiring Backend Developer</h2>
-        <p>I build practical software projects and explore how APIs, databases and thoughtful interfaces work together. My current focus is Python, FastAPI, SQL and full-stack development.</p>
-        <div class="actions"><a class="btn primary" href="#projects">Explore my work <span>↘</span></a><a class="btn secondary" href="mailto:riad.md.dev@gmail.com">Contact me ↗</a></div>
-        <div class="socials"><a href="https://github.com/mdriad-dev" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="mailto:riad.md.dev@gmail.com">Email ↗</a></div>
+        <div class="eyebrow"><span class="status-dot"></span> OPEN TO OPPORTUNITIES <span class="eyebrow-line"></span></div>
+        <p class="hero-kicker">HELLO, WORLD. I'M</p>
+        <h1>Md Riad<span class="period">.</span></h1>
+        <h2>I build <span class="typed" id="typedText">useful software</span><span class="caret">|</span></h2>
+        <p class="hero-description">A computer science graduate-in-progress exploring software development, backend APIs, data analysis and practical automation. I enjoy turning ideas into useful digital products.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">Explore my work <span>↘</span></a>
+          <a class="button button-quiet" href="https://github.com/mdriad-dev" target="_blank" rel="noreferrer"><span class="github-icon">⌘</span> Visit GitHub</a>
+        </div>
+        <div class="hero-meta"><span><i class="meta-line"></i> Based in Bangladesh</span><span><i class="meta-line"></i> Always learning</span></div>
       </div>
-      <div class="visual reveal" aria-label="Animated code illustration"><div class="orb"></div><div class="code-card"><div class="code-head"><i></i><i></i><i></i></div>
-        <div class="code-line"><span class="key">class</span> Developer:</div>
-        <div class="code-line">&nbsp;&nbsp;name = <span class="val">"Md. Riad"</span></div>
-        <div class="code-line">&nbsp;&nbsp;focus = <span class="val">"Backend"</span></div>
-        <div class="code-line">&nbsp;&nbsp;skills = [</div>
-        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="val">"Python"</span>, <span class="val">"SQL"</span>,</div>
-        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="val">"FastAPI"</span>, <span class="val">"Git"</span></div>
-        <div class="code-line">&nbsp;&nbsp;]</div>
-        <div class="code-line comment"># always building ✨</div>
-      </div></div>
+      <div class="hero-art reveal" aria-label="Decorative code illustration">
+        <div class="art-glow"></div>
+        <div class="code-window">
+          <div class="window-top"><div class="window-dots"><b></b><b></b><b></b></div><span>riad.py</span><span class="window-lock">●</span></div>
+          <div class="code-content">
+            <p><span class="line-no">01</span><span class="code-purple">class</span> <span class="code-green">Developer</span>:</p>
+            <p><span class="line-no">02</span>&nbsp;&nbsp;name = <span class="code-yellow">"Md Riad"</span></p>
+            <p><span class="line-no">03</span>&nbsp;&nbsp;focus = [</p>
+            <p><span class="line-no">04</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-yellow">"Backend APIs"</span>,</p>
+            <p><span class="line-no">05</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-yellow">"Data & automation"</span>,</p>
+            <p><span class="line-no">06</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-yellow">"Building products"</span></p>
+            <p><span class="line-no">07</span>&nbsp;&nbsp;]</p>
+            <p><span class="line-no">08</span></p>
+            <p><span class="line-no">09</span><span class="code-purple">def</span> <span class="code-blue">keep_building</span>():</p>
+            <p><span class="line-no">10</span>&nbsp;&nbsp;<span class="code-purple">return</span> <span class="code-yellow">"learn → build → improve"</span></p>
+            <div class="code-cursor"></div>
+          </div>
+          <div class="window-bottom"><span><span class="live-dot"></span> Ready to build</span><span>UTF-8&nbsp; Python</span></div>
+        </div>
+        <div class="float-chip chip-top"><span class="chip-icon">✳</span><div><small>FOCUS</small><b>Practical projects</b></div></div>
+        <div class="float-chip chip-bottom"><span class="chip-icon chip-git">⌘</span><div><small>CODE & PROGRESS</small><b>github.com/mdriad-dev</b></div></div>
+        <div class="art-cross cross-one">+</div><div class="art-cross cross-two">+</div>
+      </div>
+      <a class="scroll-hint" href="#about"><span class="scroll-wheel"></span> SCROLL TO EXPLORE</a>
     </section>
-    <section id="about"><div class="container">
-      <div class="section-head reveal"><div class="kicker">A little about me</div><h2>Building skills by building things.</h2><p>I'm a Computer Science and Engineering student at BUBT in Dhaka, Bangladesh, focused on turning concepts into working projects.</p></div>
-      <div class="about-grid"><div class="about-copy reveal"><p>I enjoy working through the full development process: understanding a problem, structuring data, building an API, testing the result and documenting what I learn. I use GitHub to track progress and share practical work.</p><p>I'm currently strengthening my backend development foundations while continuing to explore web technologies and automation.</p><div class="skills"><span class="skill">Problem solving</span><span class="skill">API development</span><span class="skill">Database design</span><span class="skill">Testing & documentation</span></div></div>
-      <div class="focus-list reveal"><div class="focus-item"><div class="focus-icon">⌘</div><div><b>Backend development</b><span>Python, FastAPI, REST APIs and PostgreSQL</span></div></div><div class="focus-item"><div class="focus-icon">▤</div><div><b>Practical software projects</b><span>Building, testing and documenting real application workflows</span></div></div><div class="focus-item"><div class="focus-icon">↗</div><div><b>Continuous learning</b><span>Improving through hands-on practice and GitHub commits</span></div></div></div></div>
-    </div></section>
-    <section id="projects"><div class="container">
-      <div class="section-head reveal"><div class="kicker">Selected work</div><h2>Projects I'm building.</h2><p>A selection of personal, academic and team projects. Open each repository to explore the source code and implementation details.</p></div>
-      <div class="grid">
-        <article class="card reveal"><div class="card-top"><div class="project-icon">⚙</div><span class="tag">In progress</span></div><h3>Coaching Management System</h3><p>A multi-branch coaching management application with a Python FastAPI backend and REST endpoints, planned with an Angular frontend and PostgreSQL database.</p><div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Angular</span><span class="tag">PostgreSQL</span></div><a class="text-link" href="https://github.com/mdriad-dev/coaching-management-system" target="_blank" rel="noreferrer">View repository ↗</a></article>
-        <article class="card reveal"><div class="card-top"><div class="project-icon">🩸</div><span class="tag">Team project</span></div><h3>Blood Donation Management</h3><p>A donor and blood-request platform with donor discovery, request workflows and administrative features.</p><div class="tags"><span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">TypeScript</span><span class="tag">Supabase</span></div><a class="text-link" href="https://github.com/blood-donation-management/blood-system" target="_blank" rel="noreferrer">View repository ↗</a></article>
-        <article class="card reveal"><div class="card-top"><div class="project-icon">📱</div><span class="tag">Campus platform</span></div><h3>CampusOne Android</h3><p>A mobile campus-service application bringing student-focused tools and campus information into one place.</p><div class="tags"><span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">TypeScript</span></div><a class="text-link" href="https://github.com/fixit-bubt/CampusOneAndroid" target="_blank" rel="noreferrer">View repository ↗</a></article>
-        <article class="card reveal"><div class="card-top"><div class="project-icon">🌐</div><span class="tag">Campus platform</span></div><h3>CampusOne Web</h3><p>A web companion for campus services, including issue reporting, Lost and Found and other student workflows.</p><div class="tags"><span class="tag">React</span><span class="tag">Vite</span><span class="tag">Tailwind CSS</span><span class="tag">Supabase</span></div><a class="text-link" href="https://github.com/fixit-bubt/CampusOneWeb" target="_blank" rel="noreferrer">View repository ↗</a></article>
-        <article class="card reveal"><div class="card-top"><div class="project-icon">📊</div><span class="tag">Learning project</span></div><h3>E-commerce Sales Analytics</h3><p>A data analytics project repository for practicing analysis, organizing results and presenting useful business insights.</p><div class="tags"><span class="tag">Python</span><span class="tag">Data analysis</span><span class="tag">GitHub</span></div><a class="text-link" href="https://github.com/mdriad-dev/ecommerce-sales-customer-analytics" target="_blank" rel="noreferrer">View repository ↗</a></article>
-        <article class="card reveal"><div class="card-top"><div class="project-icon">🐍</div><span class="tag">Practice</span></div><h3>Python Learning Projects</h3><p>A growing collection of Python exercises and small automation projects developed while learning programming fundamentals.</p><div class="tags"><span class="tag">Python</span><span class="tag">Automation</span><span class="tag">Git</span></div><a class="text-link" href="https://github.com/mdriad-dev/Myfirstcode" target="_blank" rel="noreferrer">View repository ↗</a></article>
+
+    <section class="about section-wrap section-block" id="about">
+      <div class="section-label reveal"><span>01 / ABOUT</span><i></i></div>
+      <div class="about-grid">
+        <div class="section-heading reveal"><p class="overline">A LITTLE ABOUT ME</p><h2>Curious mind.<br><span class="muted-heading">Builder's mindset.</span></h2></div>
+        <div class="about-copy reveal"><p>I'm building my skills by working on real projects and learning how software works from the inside out. My interests span backend development, data, and automation.</p><p>I value readable code, steady improvement and projects that solve real problems. This portfolio highlights selected work from my GitHub and grows alongside my journey.</p><a class="text-link" href="https://github.com/mdriad-dev" target="_blank" rel="noreferrer">Explore my GitHub profile <span>↗</span></a></div>
       </div>
-    </div></section>
-    <section id="skills"><div class="container">
-      <div class="section-head reveal"><div class="kicker">Tools & technologies</div><h2>My current toolkit.</h2><p>Technologies I've used in coursework and projects, alongside areas I'm actively improving.</p></div>
-      <div class="grid"><div class="card reveal"><h3>Languages</h3><div class="skills"><span class="skill">Python</span><span class="skill">Java</span><span class="skill">C / C++</span><span class="skill">SQL</span><span class="skill">JavaScript</span><span class="skill">HTML & CSS</span><span class="skill">TypeScript</span></div></div><div class="card reveal"><h3>Frameworks & tools</h3><div class="skills"><span class="skill">FastAPI</span><span class="skill">React</span><span class="skill">React Native</span><span class="skill">Angular (learning)</span><span class="skill">PostgreSQL</span><span class="skill">Supabase</span><span class="skill">Git & GitHub</span><span class="skill">VS Code</span></div></div></div>
-    </div></section>
-    <section id="contact"><div class="container"><div class="contact-box reveal"><div><div class="kicker">Get in touch</div><h2>Let's connect and build.</h2><p>Interested in an entry-level software, backend development or QA opportunity, or want to discuss a project? Feel free to reach out.</p></div><a class="btn primary" href="mailto:riad.md.dev@gmail.com">Send me an email ↗</a></div></div></section>
+      <div class="stats-row reveal">
+        <div class="stat"><span class="stat-number">01</span><span class="stat-label">Learn by building</span></div>
+        <div class="stat"><span class="stat-number">02</span><span class="stat-label">Solve real problems</span></div>
+        <div class="stat"><span class="stat-number">03</span><span class="stat-label">Improve every day</span></div>
+      </div>
+    </section>
+
+    <section class="projects section-wrap section-block" id="projects">
+      <div class="section-label reveal"><span>02 / SELECTED WORK</span><i></i></div>
+      <div class="section-title-row reveal"><div><p class="overline">THINGS I'VE WORKED ON</p><h2>Featured <span class="muted-heading">projects.</span></h2></div><a class="text-link all-repos" href="https://github.com/mdriad-dev?tab=repositories" target="_blank" rel="noreferrer">All repositories <span>↗</span></a></div>
+      <div class="featured-grid">
+        <article class="project-card project-large reveal">
+          <div class="project-top"><span class="project-index">01</span><span class="project-type">CAMPUS PLATFORM</span><a href="https://github.com/fixit-bubt/CampusOneWeb" target="_blank" rel="noreferrer" aria-label="CampusOne Web repository" class="external-link">↗</a></div>
+          <div class="project-visual campus-visual"><div class="visual-window"><div class="visual-bar"><span></span><span></span><span></span><b>CampusOne</b></div><div class="visual-body"><div class="visual-sidebar"><i></i><i></i><i></i><i></i></div><div class="visual-main"><div class="visual-welcome"></div><div class="visual-cards"><i></i><i></i><i></i></div><div class="visual-list"><i></i><i></i><i></i></div></div></div></div><span class="visual-tag">CONNECTED CAMPUS</span></div>
+          <div class="project-info"><h3>CampusOne Web</h3><p>A campus service platform concept bringing student-focused tools and campus information into one web experience.</p><div class="tech-list"><span>React</span><span>Vite</span><span>Tailwind CSS</span><span>Supabase</span></div><a class="project-link" href="https://github.com/fixit-bubt/CampusOneWeb" target="_blank" rel="noreferrer">View repository <span>↗</span></a></div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-top"><span class="project-index">02</span><span class="project-type">ANDROID APP</span><a href="https://github.com/fixit-bubt/CampusOneAndroid" target="_blank" rel="noreferrer" aria-label="CampusOne Android repository" class="external-link">↗</a></div>
+          <div class="project-visual mobile-visual"><div class="phone"><div class="phone-notch"></div><div class="phone-content"><div class="phone-greeting">Hello, Student 👋</div><div class="phone-banner"></div><div class="phone-label">Campus services</div><div class="phone-icons"><i>✦</i><i>⌖</i><i>♡</i><i>▤</i></div><div class="phone-lines"><i></i><i></i><i></i></div></div></div><span class="visual-tag">CAMPUS IN YOUR POCKET</span></div>
+          <div class="project-info"><h3>CampusOne Android</h3><p>A mobile companion for accessing campus services and student resources on the go.</p><div class="tech-list"><span>React Native</span><span>Expo</span><span>TypeScript</span><span>Supabase</span></div><a class="project-link" href="https://github.com/fixit-bubt/CampusOneAndroid" target="_blank" rel="noreferrer">View repository <span>↗</span></a></div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-top"><span class="project-index">03</span><span class="project-type">MANAGEMENT SYSTEM</span><a href="https://github.com/blood-donation-management/blood-system" target="_blank" rel="noreferrer" aria-label="Blood Donation Management repository" class="external-link">↗</a></div>
+          <div class="project-visual blood-visual"><div class="blood-symbol">+</div><div class="blood-ring ring-one"></div><div class="blood-ring ring-two"></div><div class="blood-caption">DONATE <b>LIFE</b></div><span class="visual-tag">COMMUNITY IMPACT</span></div>
+          <div class="project-info"><h3>Blood Donation Management</h3><p>A project focused on organizing blood donation information and supporting donor coordination workflows.</p><div class="tech-list"><span>Application Development</span><span>GitHub</span></div><a class="project-link" href="https://github.com/blood-donation-management/blood-system" target="_blank" rel="noreferrer">View repository <span>↗</span></a></div>
+        </article>
+      </div>
+      <div class="github-repos reveal"><div class="repos-heading"><div><p class="overline">FROM MY GITHUB</p><h3>More experiments & builds</h3></div><span class="repo-status"><i></i> Live repository feed</span></div><div id="repoGrid" class="repo-grid"><div class="repo-loading"><span class="loader"></span> Loading public repositories from GitHub…</div></div><p id="repoNote" class="repo-note">Repository details are loaded from the public GitHub API when available.</p></div>
+    </section>
+
+    <section class="skills section-wrap section-block" id="skills">
+      <div class="section-label reveal"><span>03 / TOOLKIT</span><i></i></div>
+      <div class="skills-grid"><div class="section-heading reveal"><p class="overline">TOOLS I'M EXPLORING</p><h2>Learning to make<br><span class="muted-heading">ideas work.</span></h2><p class="skills-intro">A growing toolkit shaped by coursework, hands-on projects and consistent practice.</p></div>
+        <div class="skill-groups reveal">
+          <div class="skill-group"><div class="skill-group-title"><span class="skill-symbol">{ }</span><h3>Programming & Backend</h3></div><div class="skill-pills"><span>Python</span><span>FastAPI</span><span>REST APIs</span><span>TypeScript</span></div></div>
+          <div class="skill-group"><div class="skill-group-title"><span class="skill-symbol">▦</span><h3>Web & Application</h3></div><div class="skill-pills"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>React Native</span><span>Angular · learning</span></div></div>
+          <div class="skill-group"><div class="skill-group-title"><span class="skill-symbol">⌘</span><h3>Data & Developer Tools</h3></div><div class="skill-pills"><span>SQL</span><span>PostgreSQL</span><span>Excel · learning</span><span>Git</span><span>GitHub</span><span>VS Code</span></div></div>
+          <div class="skill-group"><div class="skill-group-title"><span class="skill-symbol">✳</span><h3>Areas of Interest</h3></div><div class="skill-pills"><span>Data Analysis</span><span>AI Automation</span><span>Problem Solving</span><span>Software Engineering</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section-wrap section-block" id="contact">
+      <div class="contact-panel reveal"><div class="contact-orbit orbit-a"></div><div class="contact-orbit orbit-b"></div><div class="contact-content"><p class="overline">04 / WHAT'S NEXT?</p><h2>Have an idea?<br><span>Let's build it.</span></h2><p>I'm interested in opportunities to learn, collaborate and contribute to meaningful projects.</p><div class="contact-actions"><a class="button button-primary" href="https://github.com/mdriad-dev" target="_blank" rel="noreferrer">Connect on GitHub <span>↗</span></a><a class="button button-quiet" href="https://github.com/mdriad-dev?tab=repositories" target="_blank" rel="noreferrer">Browse my work</a></div></div><div class="contact-stamp">BUILD<br>LEARN<br><span>REPEAT</span></div></div>
+    </section>
   </main>
-  <footer class="footer"><div class="container footer-inner"><span>© <span id="year"></span> Md. Riad. Built with curiosity and code.</span><a href="https://github.com/mdriad-dev" target="_blank" rel="noreferrer">github.com/mdriad-dev ↗</a></div></footer>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const menuBtn = document.getElementById('menuBtn');
-    const navLinks = document.getElementById('navLinks');
-    menuBtn.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', String(open));
-    });
-    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      menuBtn.setAttribute('aria-expanded', 'false');
-    }));
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
+
+  <footer class="footer section-wrap"><a class="brand" href="#home"><span class="brand-mark">R</span><span>mdriad<span class="accent">.dev</span></span></a><p>Designed with curiosity. Built to keep growing.</p><a href="#home" class="back-top">BACK TO TOP ↑</a><span class="copyright">© <span id="year"></span> Md Riad</span></footer>
 </body>
 </html>
