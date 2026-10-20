@@ -15,9 +15,13 @@
 
 ## Visit the website
 
-**[Open Md Riad's live portfolio](https://mdriad-dev.github.io/)**
+**[Open Md Riad's live portfolio website](https://mdriad-dev.github.io/)**
 
 The portfolio is hosted with GitHub Pages and works as a static website without a local server or build step.
+
+The latest version includes a cinematic looping video background, dark
+readability overlays, interactive pointer motion, and a reduced-motion
+fallback for accessibility.
 
 ## Featured project
 
