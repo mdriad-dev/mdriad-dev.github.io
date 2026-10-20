@@ -25,6 +25,24 @@ nav?.querySelectorAll("a").forEach(link => link.addEventListener("click", () => 
   menuToggle?.setAttribute("aria-expanded", "false");
 }));
 
+const motionAllowed = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const heroArt = document.querySelector(".hero-art");
+if (motionAllowed && heroArt) {
+  heroArt.addEventListener("pointermove", event => {
+    const rect = heroArt.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+    heroArt.style.setProperty("--tilt-y", `${-7 + x * 8}deg`);
+    heroArt.style.setProperty("--tilt-x", `${2 - y * 6}deg`);
+    document.documentElement.style.setProperty("--pointer-x", `${event.clientX}px`);
+    document.documentElement.style.setProperty("--pointer-y", `${event.clientY}px`);
+  });
+  heroArt.addEventListener("pointerleave", () => {
+    heroArt.style.setProperty("--tilt-y", "-7deg");
+    heroArt.style.setProperty("--tilt-x", "2deg");
+  });
+}
+
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {

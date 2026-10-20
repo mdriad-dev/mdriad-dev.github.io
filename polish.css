@@ -1,0 +1,14 @@
+.ambient-grid{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.28;background-image:linear-gradient(rgba(184,255,101,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(184,255,101,.035) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(to bottom,black,transparent 78%);animation:grid-drift 24s linear infinite}
+.pointer-glow{position:fixed;z-index:1;pointer-events:none;width:420px;height:420px;left:var(--pointer-x,50%);top:var(--pointer-y,20%);transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(184,255,101,.1),rgba(154,123,255,.035) 36%,transparent 70%);filter:blur(12px);transition:left .35s ease-out,top .35s ease-out}
+.site-header,main{position:relative;z-index:2}
+.hero-art{transform-style:preserve-3d}
+.code-window{transform:rotateY(var(--tilt-y,-7deg)) rotateX(var(--tilt-x,2deg)) translateZ(0);transition:transform .25s ease-out,box-shadow .25s ease-out}
+.hero-art:hover .code-window{box-shadow:0 35px 110px rgba(0,0,0,.62),0 0 0 1px rgba(184,255,101,.08)}
+.project-card,.repo-card,.contact-card{transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.project-card:hover,.repo-card:hover,.contact-card:hover{transform:translateY(-7px);border-color:rgba(184,255,101,.42);box-shadow:0 20px 55px rgba(0,0,0,.24)}
+.button-primary{position:relative;overflow:hidden}
+.button-primary:after{content:"";position:absolute;inset:-40% auto -40% -35%;width:24%;background:rgba(255,255,255,.55);transform:skewX(-18deg) translateX(-180%);transition:transform .6s ease}
+.button-primary:hover:after{transform:skewX(-18deg) translateX(700%)}
+@keyframes grid-drift{from{background-position:0 0,0 0}to{background-position:0 72px,72px 0}}
+@media (max-width:700px){.ambient-grid{background-size:48px 48px}.pointer-glow{width:260px;height:260px}.hero-art{perspective:none}.code-window{transform:none}.hero-art:hover .code-window{transform:none}}
+@media (prefers-reduced-motion:reduce){.ambient-grid,.pointer-glow{animation:none}.pointer-glow{display:none}.code-window{transform:none!important;transition:none}.project-card,.repo-card,.contact-card{transition:none}}
