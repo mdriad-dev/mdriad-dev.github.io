@@ -1,43 +1,43 @@
-# Hi, I'm Md. Riad 👋
+# Md. Riad — Developer Portfolio
 
-### CSE Student | Python Developer | AI Automation Learner | Data & Excel Enthusiast
+Welcome to my developer portfolio repository. This website introduces my background, technical interests, selected projects, and contact details.
 
-I'm a Computer Science and Engineering student focused on building practical software projects and developing job ready skills in Python, AI Automation, Data Analysis and Excel.
+## 🌐 Portfolio Website
 
-## 🚀 What I'm Learning
+After enabling GitHub Pages, visit: **https://mdriad-dev.github.io/**
 
-• 🐍 Python
-• 🤖 AI Automation
-• 📊 Excel and Data Analysis
-• 🌐 Web Development
-• 🔧 Git and GitHub
+## 👨‍💻 About Me
 
-## 🛠️ Technologies & Tools
+Computer Science and Engineering student at Bangladesh University of Business and Technology (BUBT), Dhaka, Bangladesh. I am building practical experience in backend development, APIs, databases, and web technologies.
 
-**Languages:** Python, HTML, CSS, JavaScript
+## 🧰 Technologies
 
-**Tools:** Git, GitHub, VS Code, Excel
+- Python, Java, SQL, JavaScript, HTML, CSS, TypeScript
+- FastAPI, React, React Native, Expo
+- PostgreSQL, Supabase
+- Git, GitHub, VS Code
 
-## 📌 Featured Projects
+## 🚀 Featured Projects
 
-### FixIt Campus
-A web based campus management platform designed to help students report campus issues and connect reports with administrators and staff.
+- [Coaching Management System](https://github.com/mdriad-dev/coaching-management-system)
+- [Blood Donation Management System](https://github.com/blood-donation-management/blood-system)
+- [CampusOne Android](https://github.com/fixit-bubt/CampusOneAndroid)
+- [CampusOne Web](https://github.com/fixit-bubt/CampusOneWeb)
+- [E-commerce Sales & Customer Analytics](https://github.com/mdriad-dev/ecommerce-sales-customer-analytics)
 
-### Python & AI Automation
-A growing collection of Python exercises, automation projects and practical experiments documenting my learning journey.
+## ✨ Portfolio Features
 
-## 📚 Learning Journey
+- Responsive layout for desktop and mobile
+- Animated hero illustration and scroll-reveal sections
+- Project cards with links to source repositories
+- Skills, about, and contact sections
+- Reduced-motion support for accessibility
 
-I'm using GitHub to document what I learn, build practical projects and create a clear record of my technical progress.
+## 📬 Contact
 
-## 🎯 Current Focus
-
-Building practical projects and preparing for opportunities in AI Automation, Data Analysis and software development.
-
-## 📫 Connect With Me
-
-• GitHub: [@mdriad-dev](https://github.com/mdriad-dev)
+- GitHub: [@mdriad-dev](https://github.com/mdriad-dev)
+- Email: riad.md.dev@gmail.com
 
 ---
 
-⭐ Thanks for visiting my profile!
+Built with HTML, CSS, and JavaScript.
